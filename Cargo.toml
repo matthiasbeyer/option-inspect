@@ -1,0 +1,16 @@
+[package]
+name     = "option-inspect"
+version  = "0.1.0"
+authors  = ["Matthias Beyer <mail@beyermatthias.de>"]
+edition  = "2018"
+
+readme   = "README.md"
+license  = "MPL-2.0"
+
+keywords    = ["option", "util"]
+description = "Adds the missing Option::inspect() function"
+
+documentation = "https://docs.rs/option-inspect"
+repository    = "https://github.com/matthiasbeyer/option-inspect"
+
+[dependencies]
