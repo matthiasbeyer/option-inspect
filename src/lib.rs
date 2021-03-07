@@ -38,3 +38,38 @@ impl<F, T> OptionInspectRef<F, T> for Option<T>
         }
     }
 }
+
+
+pub trait OptionInspectNone<F>
+    where F: FnOnce(),
+{
+    fn inspect_none(self, f: F) -> Self;
+}
+
+pub trait OptionInspectNoneRef<F>
+    where F: FnOnce(),
+{
+    fn inspect_none(&self, f: F);
+}
+
+impl<F, T> OptionInspectNone<F> for Option<T>
+    where F: FnOnce()
+{
+    fn inspect_none(self, f: F) -> Self {
+        if let None = self.as_ref() {
+            (f)();
+        }
+
+        self
+    }
+}
+
+impl<F, T> OptionInspectNoneRef<F> for Option<T>
+    where F: FnOnce()
+{
+    fn inspect_none(&self, f: F) {
+        if let None = self {
+            (f)();
+        }
+    }
+}
