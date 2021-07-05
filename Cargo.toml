@@ -11,6 +11,6 @@ keywords    = ["option", "util"]
 description = "Adds the missing Option::inspect() function"
 
 documentation = "https://docs.rs/option-inspect"
-repository    = "https://github.com/matthiasbeyer/option-inspect"
+repository    = "https://git.beyermatthi.as/option-inspect"
 
 [dependencies]
