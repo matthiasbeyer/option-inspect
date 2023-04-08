@@ -24,7 +24,7 @@ where
 {
     fn inspect(self, f: F) -> Self {
         if let Some(ref o) = self.as_ref() {
-            (f)(&o);
+            (f)(o);
         }
 
         self
@@ -38,7 +38,7 @@ where
 {
     fn inspect(&self, f: F) {
         if let Some(ref o) = self {
-            (f)(&o);
+            (f)(o);
         }
     }
 }
