@@ -23,7 +23,7 @@ where
     T: Sized,
 {
     fn inspect(self, f: F) -> Self {
-        if let Some(ref o) = self.as_ref() {
+        if let Some(o) = self.as_ref() {
             (f)(o);
         }
 
