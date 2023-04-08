@@ -62,7 +62,7 @@ where
     F: FnOnce(),
 {
     fn inspect_none(self, f: F) -> Self {
-        if let None = self.as_ref() {
+        if self.is_none() {
             (f)();
         }
 
@@ -75,7 +75,7 @@ where
     F: FnOnce(),
 {
     fn inspect_none(&self, f: F) {
-        if let None = self {
+        if self.is_none() {
             (f)();
         }
     }
