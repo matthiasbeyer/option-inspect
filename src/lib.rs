@@ -1,11 +1,15 @@
 //! This crate adds the missing Option::inspect function via an extension trait
 //!
 
+/// Extension trait for adding Option::inspect
 pub trait OptionInspect<F, T>
 where
     F: FnOnce(&T),
     T: Sized,
 {
+    /// Inspect the Option
+    ///
+    /// Either call `f` on the value in `Some` or do nothing if this Option is a None.
     fn inspect(self, f: F) -> Self;
 }
 
@@ -43,10 +47,12 @@ where
     }
 }
 
+/// Extension trait for adding Option::inspect_none
 pub trait OptionInspectNone<F>
 where
     F: FnOnce(),
 {
+    /// Call `f` if the Option this is called on is a None
     fn inspect_none(self, f: F) -> Self;
 }
 
